@@ -1,0 +1,625 @@
+[0m15:39:38.876106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106630f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10733d730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10733d4c0>]}
+
+
+============================== 15:39:38.880018 | 3813594f-344b-44df-958c-e7692422b36b ==============================
+[0m15:39:38.880018 [info ] [MainThread]: Running with dbt=1.10.4
+[0m15:39:38.880382 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/logs', 'profiles_dir': '/Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:39:38.891421 [info ] [MainThread]: dbt version: 1.10.4
+[0m15:39:38.891709 [info ] [MainThread]: python version: 3.12.6
+[0m15:39:38.891862 [info ] [MainThread]: python path: /Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12
+[0m15:39:38.892005 [info ] [MainThread]: os info: macOS-15.0-arm64-arm-64bit
+[0m15:39:38.936319 [info ] [MainThread]: Using profiles dir at /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt
+[0m15:39:38.936598 [info ] [MainThread]: Using profiles.yml file at /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/profiles.yml
+[0m15:39:38.936751 [info ] [MainThread]: Using dbt_project.yml file at /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/dbt_project.yml
+[0m15:39:38.937080 [info ] [MainThread]: adapter type: postgres
+[0m15:39:38.937221 [info ] [MainThread]: adapter version: 1.9.0
+[0m15:39:38.987039 [info ] [MainThread]: Configuration:
+[0m15:39:38.987321 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:39:38.987474 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:39:38.987609 [info ] [MainThread]: Required dependencies:
+[0m15:39:38.987808 [debug] [MainThread]: Executing "git --help"
+[0m15:39:39.051709 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:39:39.052281 [debug] [MainThread]: STDERR: "b''"
+[0m15:39:39.052470 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:39:39.052642 [info ] [MainThread]: Connection:
+[0m15:39:39.052808 [info ] [MainThread]:   host: localhost
+[0m15:39:39.052942 [info ] [MainThread]:   port: 5432
+[0m15:39:39.053069 [info ] [MainThread]:   user: airflow
+[0m15:39:39.053187 [info ] [MainThread]:   database: airflow
+[0m15:39:39.053305 [info ] [MainThread]:   schema: public
+[0m15:39:39.053429 [info ] [MainThread]:   connect_timeout: 10
+[0m15:39:39.053551 [info ] [MainThread]:   role: None
+[0m15:39:39.053667 [info ] [MainThread]:   search_path: None
+[0m15:39:39.053783 [info ] [MainThread]:   keepalives_idle: 0
+[0m15:39:39.053905 [info ] [MainThread]:   sslmode: None
+[0m15:39:39.054016 [info ] [MainThread]:   sslcert: None
+[0m15:39:39.054131 [info ] [MainThread]:   sslkey: None
+[0m15:39:39.054244 [info ] [MainThread]:   sslrootcert: None
+[0m15:39:39.054356 [info ] [MainThread]:   application_name: dbt
+[0m15:39:39.054468 [info ] [MainThread]:   retries: 1
+[0m15:39:39.054812 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:39:39.115666 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m15:39:39.152033 [debug] [MainThread]: Using postgres connection "debug"
+[0m15:39:39.152254 [debug] [MainThread]: On debug: select 1 as id
+[0m15:39:39.152398 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:39:39.411120 [debug] [MainThread]: SQL status: SELECT 1 in 0.259 seconds
+[0m15:39:39.412361 [debug] [MainThread]: On debug: Close
+[0m15:39:39.412744 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:39:39.413300 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:39:39.423767 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.5933289, "process_in_blocks": "0", "process_kernel_time": 0.201432, "process_mem_max_rss": "118947840", "process_out_blocks": "0", "process_user_time": 0.859722}
+[0m15:39:39.424657 [debug] [MainThread]: Command `dbt debug` succeeded at 15:39:39.424528 after 0.59 seconds
+[0m15:39:39.424984 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:39:39.425317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10585c620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073b1220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1078f37a0>]}
+[0m15:39:39.425701 [debug] [MainThread]: Flushing usage events
+[0m15:39:41.130358 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:58:18.555189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10950cef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae1dc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae1da00>]}
+
+
+============================== 15:58:18.559033 | 246dc32a-d819-4e42-a5d4-d6aeff6523d3 ==============================
+[0m15:58:18.559033 [info ] [MainThread]: Running with dbt=1.10.4
+[0m15:58:18.559375 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/logs', 'profiles_dir': '/Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:58:18.701267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aed5910>]}
+[0m15:58:18.730910 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aeec440>]}
+[0m15:58:18.731623 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:58:18.791750 [debug] [MainThread]: checksum: 073cb5a296270136b24f9c040fdebd0642ef9c263903ef463bfe7e190c538da2, vars: {}, profile: , target: , version: 1.10.4
+[0m15:58:18.792190 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:58:18.792382 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077f6a50>]}
+[0m15:58:19.429922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e05f380>]}
+[0m15:58:19.459870 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/manifest.json
+[0m15:58:19.462008 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/semantic_manifest.json
+[0m15:58:19.476402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1246b0>]}
+[0m15:58:19.476674 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m15:58:19.476854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e0f2420>]}
+[0m15:58:19.477682 [info ] [MainThread]: 
+[0m15:58:19.477859 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:58:19.477997 [info ] [MainThread]: 
+[0m15:58:19.478229 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:58:19.480068 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m15:58:19.508367 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m15:58:19.508606 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:58:19.508757 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:58:19.576126 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.067 seconds
+[0m15:58:19.577051 [debug] [ThreadPool]: On list_airflow: Close
+[0m15:58:19.577843 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow, now list_airflow_public)
+[0m15:58:19.581624 [debug] [ThreadPool]: Using postgres connection "list_airflow_public"
+[0m15:58:19.581842 [debug] [ThreadPool]: On list_airflow_public: BEGIN
+[0m15:58:19.581996 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:58:19.589921 [debug] [ThreadPool]: SQL status: BEGIN in 0.008 seconds
+[0m15:58:19.590178 [debug] [ThreadPool]: Using postgres connection "list_airflow_public"
+[0m15:58:19.590356 [debug] [ThreadPool]: On list_airflow_public: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "connection_name": "list_airflow_public"} */
+select
+      'airflow' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'airflow' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'airflow' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:58:19.602632 [debug] [ThreadPool]: SQL status: SELECT 43 in 0.012 seconds
+[0m15:58:19.603934 [debug] [ThreadPool]: On list_airflow_public: ROLLBACK
+[0m15:58:19.604411 [debug] [ThreadPool]: On list_airflow_public: Close
+[0m15:58:19.610998 [debug] [MainThread]: Using postgres connection "master"
+[0m15:58:19.611225 [debug] [MainThread]: On master: BEGIN
+[0m15:58:19.611378 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:58:19.620644 [debug] [MainThread]: SQL status: BEGIN in 0.009 seconds
+[0m15:58:19.620917 [debug] [MainThread]: Using postgres connection "master"
+[0m15:58:19.621150 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:58:19.643062 [debug] [MainThread]: SQL status: SELECT 0 in 0.022 seconds
+[0m15:58:19.644127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10777a660>]}
+[0m15:58:19.644461 [debug] [MainThread]: On master: ROLLBACK
+[0m15:58:19.645054 [debug] [MainThread]: Using postgres connection "master"
+[0m15:58:19.645244 [debug] [MainThread]: On master: BEGIN
+[0m15:58:19.645994 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m15:58:19.646241 [debug] [MainThread]: On master: COMMIT
+[0m15:58:19.646439 [debug] [MainThread]: Using postgres connection "master"
+[0m15:58:19.646613 [debug] [MainThread]: On master: COMMIT
+[0m15:58:19.647113 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:58:19.647303 [debug] [MainThread]: On master: Close
+[0m15:58:19.649266 [debug] [Thread-1 (]: Began running node model.clickstream_sales_project.stg_sales
+[0m15:58:19.649632 [info ] [Thread-1 (]: 1 of 3 START sql view model public.stg_sales ................................... [RUN]
+[0m15:58:19.649935 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airflow_public, now model.clickstream_sales_project.stg_sales)
+[0m15:58:19.650146 [debug] [Thread-1 (]: Began compiling node model.clickstream_sales_project.stg_sales
+[0m15:58:19.654887 [debug] [Thread-1 (]: Writing injected SQL for node "model.clickstream_sales_project.stg_sales"
+[0m15:58:19.655565 [debug] [Thread-1 (]: Began executing node model.clickstream_sales_project.stg_sales
+[0m15:58:19.676280 [debug] [Thread-1 (]: Writing runtime sql for node "model.clickstream_sales_project.stg_sales"
+[0m15:58:19.676977 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m15:58:19.677168 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: BEGIN
+[0m15:58:19.677331 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:58:19.683678 [debug] [Thread-1 (]: SQL status: BEGIN in 0.006 seconds
+[0m15:58:19.683922 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m15:58:19.684117 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.stg_sales"} */
+
+  create view "airflow"."public"."stg_sales__dbt_tmp"
+    
+    
+  as (
+    -- staging model: clean and rename raw sales data
+with source as (
+  select * from "airflow"."public"."sales"
+),
+
+renamed as (
+  select
+    order_id,
+    product_id,
+    customer_id,
+    quantity,
+    total_price,
+    order_date
+  from source
+)
+
+select * from renamed
+  );
+[0m15:58:19.685323 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "public.sales" does not exist
+LINE 9:   select * from "airflow"."public"."sales"
+                        ^
+
+[0m15:58:19.685515 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: ROLLBACK
+[0m15:58:19.685982 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: Close
+[0m15:58:19.690839 [debug] [Thread-1 (]: Database Error in model stg_sales (models/staging/stg_sales.sql)
+  relation "public.sales" does not exist
+  LINE 9:   select * from "airflow"."public"."sales"
+                          ^
+  compiled code at target/run/clickstream_sales_project/models/staging/stg_sales.sql
+[0m15:58:19.691951 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '246dc32a-d819-4e42-a5d4-d6aeff6523d3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e095fd0>]}
+[0m15:58:19.692321 [error] [Thread-1 (]: 1 of 3 ERROR creating sql view model public.stg_sales .......................... [[31mERROR[0m in 0.04s]
+[0m15:58:19.692625 [debug] [Thread-1 (]: Finished running node model.clickstream_sales_project.stg_sales
+[0m15:58:19.692886 [debug] [Thread-4 (]: Marking all children of 'model.clickstream_sales_project.stg_sales' to be skipped because of status 'error'.  Reason: Database Error in model stg_sales (models/staging/stg_sales.sql)
+  relation "public.sales" does not exist
+  LINE 9:   select * from "airflow"."public"."sales"
+                          ^
+  compiled code at target/run/clickstream_sales_project/models/staging/stg_sales.sql.
+[0m15:58:19.693542 [debug] [Thread-1 (]: Began running node model.clickstream_sales_project.dim_products
+[0m15:58:19.693812 [info ] [Thread-1 (]: 2 of 3 SKIP relation public.dim_products ....................................... [[33mSKIP[0m]
+[0m15:58:19.694046 [debug] [Thread-1 (]: Finished running node model.clickstream_sales_project.dim_products
+[0m15:58:19.694236 [debug] [Thread-1 (]: Began running node model.clickstream_sales_project.fact_sales
+[0m15:58:19.694442 [info ] [Thread-1 (]: 3 of 3 SKIP relation public.fact_sales ......................................... [[33mSKIP[0m]
+[0m15:58:19.694673 [debug] [Thread-1 (]: Finished running node model.clickstream_sales_project.fact_sales
+[0m15:58:19.695151 [debug] [MainThread]: Using postgres connection "master"
+[0m15:58:19.695301 [debug] [MainThread]: On master: BEGIN
+[0m15:58:19.695428 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:58:19.703136 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m15:58:19.703432 [debug] [MainThread]: On master: COMMIT
+[0m15:58:19.703606 [debug] [MainThread]: Using postgres connection "master"
+[0m15:58:19.703752 [debug] [MainThread]: On master: COMMIT
+[0m15:58:19.704113 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:58:19.704282 [debug] [MainThread]: On master: Close
+[0m15:58:19.704502 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:58:19.704639 [debug] [MainThread]: Connection 'model.clickstream_sales_project.stg_sales' was properly closed.
+[0m15:58:19.704831 [info ] [MainThread]: 
+[0m15:58:19.705002 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 0.23 seconds (0.23s).
+[0m15:58:19.705407 [debug] [MainThread]: Command end result
+[0m15:58:19.717156 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/manifest.json
+[0m15:58:19.718289 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/semantic_manifest.json
+[0m15:58:19.721359 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/run_results.json
+[0m15:58:19.721572 [info ] [MainThread]: 
+[0m15:58:19.721762 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m15:58:19.721917 [info ] [MainThread]: 
+[0m15:58:19.722109 [error] [MainThread]: [31mFailure in model stg_sales (models/staging/stg_sales.sql)[0m
+[0m15:58:19.722285 [error] [MainThread]:   Database Error in model stg_sales (models/staging/stg_sales.sql)
+  relation "public.sales" does not exist
+  LINE 9:   select * from "airflow"."public"."sales"
+                          ^
+  compiled code at target/run/clickstream_sales_project/models/staging/stg_sales.sql
+[0m15:58:19.722440 [info ] [MainThread]: 
+[0m15:58:19.722807 [info ] [MainThread]:   compiled code at target/compiled/clickstream_sales_project/models/staging/stg_sales.sql
+[0m15:58:19.723018 [info ] [MainThread]: 
+[0m15:58:19.723237 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=2 NO-OP=0 TOTAL=3
+[0m15:58:19.725218 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.2092837, "process_in_blocks": "0", "process_kernel_time": 0.213357, "process_mem_max_rss": "131301376", "process_out_blocks": "0", "process_user_time": 1.534698}
+[0m15:58:19.725502 [debug] [MainThread]: Command `dbt run` failed at 15:58:19.725449 after 1.21 seconds
+[0m15:58:19.725693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10950cef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093e2180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a362d20>]}
+[0m15:58:19.725867 [debug] [MainThread]: Flushing usage events
+[0m15:58:21.508666 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:01:31.865378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107480bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b21dac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b21d880>]}
+
+
+============================== 16:01:31.869340 | 9e53d92b-de86-4bd5-9a3b-117356e12997 ==============================
+[0m16:01:31.869340 [info ] [MainThread]: Running with dbt=1.10.4
+[0m16:01:31.869709 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m16:01:32.012236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b2e17f0>]}
+[0m16:01:32.040621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f7adb0>]}
+[0m16:01:32.041275 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m16:01:32.100987 [debug] [MainThread]: checksum: 073cb5a296270136b24f9c040fdebd0642ef9c263903ef463bfe7e190c538da2, vars: {}, profile: , target: , version: 1.10.4
+[0m16:01:32.159303 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m16:01:32.159770 [debug] [MainThread]: Partial parsing: updated file: clickstream_sales_project://models/staging/source.yml
+[0m16:01:32.159962 [debug] [MainThread]: Partial parsing: updated file: clickstream_sales_project://models/staging/stg_sales.sql
+[0m16:01:32.329916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11be601a0>]}
+[0m16:01:32.360026 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/manifest.json
+[0m16:01:32.361359 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/semantic_manifest.json
+[0m16:01:32.375078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c429b80>]}
+[0m16:01:32.375338 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m16:01:32.375516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c3e0230>]}
+[0m16:01:32.376388 [info ] [MainThread]: 
+[0m16:01:32.376581 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:01:32.376717 [info ] [MainThread]: 
+[0m16:01:32.376947 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:01:32.378746 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m16:01:32.406431 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m16:01:32.406718 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:01:32.406925 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:01:32.468037 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.061 seconds
+[0m16:01:32.468962 [debug] [ThreadPool]: On list_airflow: Close
+[0m16:01:32.469750 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow, now list_airflow_public)
+[0m16:01:32.474258 [debug] [ThreadPool]: Using postgres connection "list_airflow_public"
+[0m16:01:32.474523 [debug] [ThreadPool]: On list_airflow_public: BEGIN
+[0m16:01:32.474682 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:01:32.487004 [debug] [ThreadPool]: SQL status: BEGIN in 0.012 seconds
+[0m16:01:32.487298 [debug] [ThreadPool]: Using postgres connection "list_airflow_public"
+[0m16:01:32.487491 [debug] [ThreadPool]: On list_airflow_public: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "connection_name": "list_airflow_public"} */
+select
+      'airflow' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'airflow' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'airflow' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m16:01:32.493997 [debug] [ThreadPool]: SQL status: SELECT 43 in 0.006 seconds
+[0m16:01:32.495249 [debug] [ThreadPool]: On list_airflow_public: ROLLBACK
+[0m16:01:32.495806 [debug] [ThreadPool]: On list_airflow_public: Close
+[0m16:01:32.534284 [debug] [MainThread]: Using postgres connection "master"
+[0m16:01:32.534530 [debug] [MainThread]: On master: BEGIN
+[0m16:01:32.534665 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:01:32.541817 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m16:01:32.542022 [debug] [MainThread]: Using postgres connection "master"
+[0m16:01:32.542224 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m16:01:32.560969 [debug] [MainThread]: SQL status: SELECT 0 in 0.018 seconds
+[0m16:01:32.561865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10527a6f0>]}
+[0m16:01:32.562181 [debug] [MainThread]: On master: ROLLBACK
+[0m16:01:32.562751 [debug] [MainThread]: Using postgres connection "master"
+[0m16:01:32.562986 [debug] [MainThread]: On master: BEGIN
+[0m16:01:32.563767 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m16:01:32.563957 [debug] [MainThread]: On master: COMMIT
+[0m16:01:32.564129 [debug] [MainThread]: Using postgres connection "master"
+[0m16:01:32.564287 [debug] [MainThread]: On master: COMMIT
+[0m16:01:32.564720 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:01:32.564905 [debug] [MainThread]: On master: Close
+[0m16:01:32.567154 [debug] [Thread-1 (]: Began running node model.clickstream_sales_project.stg_sales
+[0m16:01:32.567480 [info ] [Thread-1 (]: 1 of 3 START sql view model public.stg_sales ................................... [RUN]
+[0m16:01:32.567735 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airflow_public, now model.clickstream_sales_project.stg_sales)
+[0m16:01:32.567926 [debug] [Thread-1 (]: Began compiling node model.clickstream_sales_project.stg_sales
+[0m16:01:32.572323 [debug] [Thread-1 (]: Writing injected SQL for node "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.572886 [debug] [Thread-1 (]: Began executing node model.clickstream_sales_project.stg_sales
+[0m16:01:32.593344 [debug] [Thread-1 (]: Writing runtime sql for node "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.593896 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.594085 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: BEGIN
+[0m16:01:32.594243 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:01:32.600626 [debug] [Thread-1 (]: SQL status: BEGIN in 0.006 seconds
+[0m16:01:32.600903 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.601099 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.stg_sales"} */
+
+  create view "airflow"."public"."stg_sales__dbt_tmp"
+    
+    
+  as (
+    -- staging model: clean and rename raw sales data
+with source as (
+  select * from "airflow"."public"."sales_staging"
+),
+
+renamed as (
+  select
+    order_id,
+    product_id,
+    customer_id,
+    quantity,
+    total_price,
+    order_date
+  from source
+)
+
+select * from renamed
+  );
+[0m16:01:32.610322 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.009 seconds
+[0m16:01:32.614265 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.614508 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.stg_sales"} */
+alter table "airflow"."public"."stg_sales__dbt_tmp" rename to "stg_sales"
+[0m16:01:32.615823 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m16:01:32.624652 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: COMMIT
+[0m16:01:32.624881 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.625053 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: COMMIT
+[0m16:01:32.627141 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m16:01:32.630602 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."stg_sales__dbt_backup"
+[0m16:01:32.633217 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.stg_sales"
+[0m16:01:32.633422 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.stg_sales"} */
+drop view if exists "airflow"."public"."stg_sales__dbt_backup" cascade
+[0m16:01:32.634622 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m16:01:32.635944 [debug] [Thread-1 (]: On model.clickstream_sales_project.stg_sales: Close
+[0m16:01:32.637056 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105193c80>]}
+[0m16:01:32.637461 [info ] [Thread-1 (]: 1 of 3 OK created sql view model public.stg_sales .............................. [[32mCREATE VIEW[0m in 0.07s]
+[0m16:01:32.637797 [debug] [Thread-1 (]: Finished running node model.clickstream_sales_project.stg_sales
+[0m16:01:32.638226 [debug] [Thread-1 (]: Began running node model.clickstream_sales_project.dim_products
+[0m16:01:32.638513 [info ] [Thread-1 (]: 2 of 3 START sql table model public.dim_products ............................... [RUN]
+[0m16:01:32.638742 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.clickstream_sales_project.stg_sales, now model.clickstream_sales_project.dim_products)
+[0m16:01:32.638925 [debug] [Thread-1 (]: Began compiling node model.clickstream_sales_project.dim_products
+[0m16:01:32.640470 [debug] [Thread-1 (]: Writing injected SQL for node "model.clickstream_sales_project.dim_products"
+[0m16:01:32.640939 [debug] [Thread-1 (]: Began executing node model.clickstream_sales_project.dim_products
+[0m16:01:32.653285 [debug] [Thread-1 (]: Writing runtime sql for node "model.clickstream_sales_project.dim_products"
+[0m16:01:32.653985 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.dim_products"
+[0m16:01:32.654181 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: BEGIN
+[0m16:01:32.654342 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:01:32.662029 [debug] [Thread-1 (]: SQL status: BEGIN in 0.008 seconds
+[0m16:01:32.662318 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.dim_products"
+[0m16:01:32.662500 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.dim_products"} */
+
+  
+    
+
+  create  table "airflow"."public"."dim_products__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with product_data as (
+  select distinct
+    product_id
+  from "airflow"."public"."stg_sales"
+)
+
+select
+  product_id,
+  'Product ' || product_id as product_name
+from product_data
+  );
+  
+[0m16:01:32.683384 [debug] [Thread-1 (]: SQL status: SELECT 100 in 0.021 seconds
+[0m16:01:32.687765 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.dim_products"
+[0m16:01:32.688001 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.dim_products"} */
+alter table "airflow"."public"."dim_products__dbt_tmp" rename to "dim_products"
+[0m16:01:32.688776 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m16:01:32.689689 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: COMMIT
+[0m16:01:32.689906 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.dim_products"
+[0m16:01:32.690090 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: COMMIT
+[0m16:01:32.691933 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m16:01:32.693264 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."dim_products__dbt_backup"
+[0m16:01:32.695131 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.dim_products"
+[0m16:01:32.695359 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.dim_products"} */
+drop table if exists "airflow"."public"."dim_products__dbt_backup" cascade
+[0m16:01:32.696306 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m16:01:32.697265 [debug] [Thread-1 (]: On model.clickstream_sales_project.dim_products: Close
+[0m16:01:32.697624 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b7ba510>]}
+[0m16:01:32.698012 [info ] [Thread-1 (]: 2 of 3 OK created sql table model public.dim_products .......................... [[32mSELECT 100[0m in 0.06s]
+[0m16:01:32.698354 [debug] [Thread-1 (]: Finished running node model.clickstream_sales_project.dim_products
+[0m16:01:32.698589 [debug] [Thread-1 (]: Began running node model.clickstream_sales_project.fact_sales
+[0m16:01:32.698880 [info ] [Thread-1 (]: 3 of 3 START sql table model public.fact_sales ................................. [RUN]
+[0m16:01:32.699121 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.clickstream_sales_project.dim_products, now model.clickstream_sales_project.fact_sales)
+[0m16:01:32.699315 [debug] [Thread-1 (]: Began compiling node model.clickstream_sales_project.fact_sales
+[0m16:01:32.701030 [debug] [Thread-1 (]: Writing injected SQL for node "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.701494 [debug] [Thread-1 (]: Began executing node model.clickstream_sales_project.fact_sales
+[0m16:01:32.703622 [debug] [Thread-1 (]: Writing runtime sql for node "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.703979 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.704166 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: BEGIN
+[0m16:01:32.704428 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:01:32.714098 [debug] [Thread-1 (]: SQL status: BEGIN in 0.010 seconds
+[0m16:01:32.714414 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.714617 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.fact_sales"} */
+
+  
+    
+
+  create  table "airflow"."public"."fact_sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    select
+  order_id,
+  customer_id,
+  product_id,
+  quantity,
+  total_price,
+  order_date
+from "airflow"."public"."stg_sales"
+  );
+  
+[0m16:01:32.737782 [debug] [Thread-1 (]: SQL status: SELECT 10000 in 0.023 seconds
+[0m16:01:32.740125 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.740396 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.fact_sales"} */
+alter table "airflow"."public"."fact_sales__dbt_tmp" rename to "fact_sales"
+[0m16:01:32.741184 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m16:01:32.742177 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: COMMIT
+[0m16:01:32.742425 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.742629 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: COMMIT
+[0m16:01:32.758986 [debug] [Thread-1 (]: SQL status: COMMIT in 0.016 seconds
+[0m16:01:32.760817 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."fact_sales__dbt_backup"
+[0m16:01:32.761310 [debug] [Thread-1 (]: Using postgres connection "model.clickstream_sales_project.fact_sales"
+[0m16:01:32.761549 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: /* {"app": "dbt", "dbt_version": "1.10.4", "profile_name": "clickstream_sales", "target_name": "dev", "node_id": "model.clickstream_sales_project.fact_sales"} */
+drop table if exists "airflow"."public"."fact_sales__dbt_backup" cascade
+[0m16:01:32.762200 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m16:01:32.763196 [debug] [Thread-1 (]: On model.clickstream_sales_project.fact_sales: Close
+[0m16:01:32.763746 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9e53d92b-de86-4bd5-9a3b-117356e12997', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11c245a60>]}
+[0m16:01:32.764377 [info ] [Thread-1 (]: 3 of 3 OK created sql table model public.fact_sales ............................ [[32mSELECT 10000[0m in 0.06s]
+[0m16:01:32.764741 [debug] [Thread-1 (]: Finished running node model.clickstream_sales_project.fact_sales
+[0m16:01:32.765413 [debug] [MainThread]: Using postgres connection "master"
+[0m16:01:32.765602 [debug] [MainThread]: On master: BEGIN
+[0m16:01:32.765764 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:01:32.776157 [debug] [MainThread]: SQL status: BEGIN in 0.010 seconds
+[0m16:01:32.776454 [debug] [MainThread]: On master: COMMIT
+[0m16:01:32.776634 [debug] [MainThread]: Using postgres connection "master"
+[0m16:01:32.776789 [debug] [MainThread]: On master: COMMIT
+[0m16:01:32.777261 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:01:32.777442 [debug] [MainThread]: On master: Close
+[0m16:01:32.777680 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:01:32.777833 [debug] [MainThread]: Connection 'model.clickstream_sales_project.fact_sales' was properly closed.
+[0m16:01:32.778041 [info ] [MainThread]: 
+[0m16:01:32.778227 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[0m16:01:32.778747 [debug] [MainThread]: Command end result
+[0m16:01:32.790752 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/manifest.json
+[0m16:01:32.792338 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/semantic_manifest.json
+[0m16:01:32.795554 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/fakhribashiri/Documents/FAKHRI/Data Engineer/Portofolio/clickstream-data-pipeline/dbt/target/run_results.json
+[0m16:01:32.795741 [info ] [MainThread]: 
+[0m16:01:32.795930 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:01:32.796071 [info ] [MainThread]: 
+[0m16:01:32.796228 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m16:01:32.798190 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.97169656, "process_in_blocks": "0", "process_kernel_time": 0.217967, "process_mem_max_rss": "131039232", "process_out_blocks": "0", "process_user_time": 1.3385}
+[0m16:01:32.798545 [debug] [MainThread]: Command `dbt run` succeeded at 16:01:32.798485 after 0.97 seconds
+[0m16:01:32.798763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b048a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ee4380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076fcc80>]}
+[0m16:01:32.798958 [debug] [MainThread]: Flushing usage events
+[0m16:01:34.534103 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,39 @@
+[2025-07-16T07:48:07.839+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_batch_etl.load_from_minio manual__2025-07-16T07:48:06.691375+00:00 [queued]>
+[2025-07-16T07:48:07.846+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_batch_etl.load_from_minio manual__2025-07-16T07:48:06.691375+00:00 [queued]>
+[2025-07-16T07:48:07.846+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-16T07:48:07.852+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): load_from_minio> on 2025-07-16 07:48:06.691375+00:00
+[2025-07-16T07:48:07.858+0000] {standard_task_runner.py:60} INFO - Started process 3928 to run task
+[2025-07-16T07:48:07.860+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'sales_batch_etl', 'load_from_minio', 'manual__2025-07-16T07:48:06.691375+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/sales_batch_etl.py', '--cfg-path', '/tmp/tmpgec95c3e']
+[2025-07-16T07:48:07.863+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask load_from_minio
+[2025-07-16T07:48:07.879+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-16T07:48:07.907+0000] {task_command.py:423} INFO - Running <TaskInstance: sales_batch_etl.load_from_minio manual__2025-07-16T07:48:06.691375+00:00 [running]> on host 475ab637e9bf
+[2025-07-16T07:48:07.955+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_batch_etl' AIRFLOW_CTX_TASK_ID='load_from_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-07-16T07:48:06.691375+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-16T07:48:06.691375+00:00'
+[2025-07-16T07:48:07.955+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-16T07:48:07.956+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/***/scripts/load_from_minio.py']
+[2025-07-16T07:48:07.965+0000] {subprocess.py:86} INFO - Output:
+[2025-07-16T07:48:08.358+0000] {subprocess.py:93} INFO - ⏳ Connecting to MinIO...
+[2025-07-16T07:48:08.362+0000] {subprocess.py:93} INFO - 📥 Downloading 'sales.csv' from bucket 'raw'
+[2025-07-16T07:48:08.363+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/load_from_minio.py", line 14, in <module>
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -     data = client.get_object("raw", "sales.csv")
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/minio/api.py", line 1252, in get_object
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -     return self._execute(
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/minio/api.py", line 437, in _execute
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -     region = self._get_region(bucket_name)
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/minio/api.py", line 494, in _get_region
+[2025-07-16T07:48:08.364+0000] {subprocess.py:93} INFO -     response = self._url_open(
+[2025-07-16T07:48:08.365+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/minio/api.py", line 423, in _url_open
+[2025-07-16T07:48:08.366+0000] {subprocess.py:93} INFO -     raise response_error
+[2025-07-16T07:48:08.366+0000] {subprocess.py:93} INFO - minio.error.S3Error: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /raw, request_id: 1852ABC9D53F95BA, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: raw
+[2025-07-16T07:48:08.399+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-07-16T07:48:08.408+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-07-16T07:48:08.410+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=sales_batch_etl, task_id=load_from_minio, execution_date=20250716T074806, start_date=20250716T074807, end_date=20250716T074808
+[2025-07-16T07:48:08.416+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5 for task load_from_minio (Bash command failed. The command returned a non-zero exit code 1.; 3928)
+[2025-07-16T07:48:08.431+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-16T07:48:08.446+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

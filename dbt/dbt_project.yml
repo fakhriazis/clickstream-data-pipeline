@@ -1,0 +1,16 @@
+name: clickstream_sales_project
+version: 1.0.0
+config-version: 2
+
+profile: clickstream_sales
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_modules"]
+
+models:
+  clickstream_sales_project:
+    staging:
+      materialized: view
+    marts:
+      materialized: table

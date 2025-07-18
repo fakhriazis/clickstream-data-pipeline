@@ -1,0 +1,21 @@
+[2025-07-16T07:51:35.473+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_batch_etl.load_from_minio manual__2025-07-16T07:46:32.496461+00:00 [queued]>
+[2025-07-16T07:51:35.484+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_batch_etl.load_from_minio manual__2025-07-16T07:46:32.496461+00:00 [queued]>
+[2025-07-16T07:51:35.485+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-07-16T07:51:35.492+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): load_from_minio> on 2025-07-16 07:46:32.496461+00:00
+[2025-07-16T07:51:35.496+0000] {standard_task_runner.py:60} INFO - Started process 3999 to run task
+[2025-07-16T07:51:35.500+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'sales_batch_etl', 'load_from_minio', 'manual__2025-07-16T07:46:32.496461+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/sales_batch_etl.py', '--cfg-path', '/tmp/tmpnbpc_vkd']
+[2025-07-16T07:51:35.503+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask load_from_minio
+[2025-07-16T07:51:35.518+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-16T07:51:35.548+0000] {task_command.py:423} INFO - Running <TaskInstance: sales_batch_etl.load_from_minio manual__2025-07-16T07:46:32.496461+00:00 [running]> on host 475ab637e9bf
+[2025-07-16T07:51:35.597+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_batch_etl' AIRFLOW_CTX_TASK_ID='load_from_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-07-16T07:46:32.496461+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-16T07:46:32.496461+00:00'
+[2025-07-16T07:51:35.598+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-16T07:51:35.599+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/***/scripts/load_from_minio.py']
+[2025-07-16T07:51:35.607+0000] {subprocess.py:86} INFO - Output:
+[2025-07-16T07:51:35.984+0000] {subprocess.py:93} INFO - ⏳ Connecting to MinIO...
+[2025-07-16T07:51:35.984+0000] {subprocess.py:93} INFO - 📥 Downloading 'sales.csv' from bucket 'raw'
+[2025-07-16T07:51:35.985+0000] {subprocess.py:93} INFO - ✅ Downloaded data with shape: (3, 6)
+[2025-07-16T07:51:35.986+0000] {subprocess.py:93} INFO - 📁 Data saved to /tmp/sales.csv
+[2025-07-16T07:51:36.021+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-07-16T07:51:36.053+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=sales_batch_etl, task_id=load_from_minio, execution_date=20250716T074632, start_date=20250716T075135, end_date=20250716T075136
+[2025-07-16T07:51:36.100+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-07-16T07:51:36.117+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
