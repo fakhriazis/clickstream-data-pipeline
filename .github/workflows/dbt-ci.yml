@@ -4,45 +4,49 @@ on:
   push:
     branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  dbt-run:
+  dbt-check:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:13
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: airflow
+          POSTGRES_PASSWORD: airflow
+          POSTGRES_DB: airflow
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install dbt-postgres
         run: |
-          python -m pip install --upgrade pip
           pip install dbt-postgres
 
-      - name: Setup dbt profile
+      - name: Wait for PostgreSQL
         run: |
-          mkdir -p ~/.dbt
-          echo "clickstream_sales_project:" > ~/.dbt/profiles.yml
-          echo "  target: dev" >> ~/.dbt/profiles.yml
-          echo "  outputs:" >> ~/.dbt/profiles.yml
-          echo "    dev:" >> ~/.dbt/profiles.yml
-          echo "      type: postgres" >> ~/.dbt/profiles.yml
-          echo "      host: ${{ secrets.DBT_HOST }}" >> ~/.dbt/profiles.yml
-          echo "      user: ${{ secrets.DBT_USER }}" >> ~/.dbt/profiles.yml
-          echo "      password: ${{ secrets.DBT_PASSWORD }}" >> ~/.dbt/profiles.yml
-          echo "      port: 5432" >> ~/.dbt/profiles.yml
-          echo "      dbname: ${{ secrets.DBT_DBNAME }}" >> ~/.dbt/profiles.yml
-          echo "      schema: public" >> ~/.dbt/profiles.yml
+          until pg_isready -h localhost -p 5432; do sleep 1; done
 
       - name: Run dbt debug
-        run: dbt debug --project-dir dbt
+        run: dbt debug --profiles-dir ./ --project-dir .
 
-      - name: Run dbt models
-        run: dbt run --project-dir dbt
+      - name: Run dbt run
+        run: dbt run --profiles-dir ./ --project-dir .
 
-      - name: Run dbt tests
-        run: dbt test --project-dir dbt
+      - name: Run dbt test
+        run: dbt test --profiles-dir ./ --project-dir .
