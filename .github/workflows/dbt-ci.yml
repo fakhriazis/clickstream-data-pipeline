@@ -1,4 +1,4 @@
-name: dbt CI
+name: dbt CI/CD
 
 on:
   push:
@@ -35,12 +35,15 @@ jobs:
           python-version: "3.11"
 
       - name: Install dbt-postgres
-        run: |
-          pip install dbt-postgres
+        run: pip install dbt-postgres
 
       - name: Wait for PostgreSQL
+        run: until pg_isready -h localhost -p 5432; do sleep 1; done
+
+      - name: Lint dbt project
         run: |
-          until pg_isready -h localhost -p 5432; do sleep 1; done
+          dbt deps --profiles-dir ./ --project-dir .
+          dbt parse --profiles-dir ./ --project-dir .
 
       - name: Run dbt debug
         run: dbt debug --profiles-dir ./ --project-dir .
@@ -50,3 +53,12 @@ jobs:
 
       - name: Run dbt test
         run: dbt test --profiles-dir ./ --project-dir .
+
+      - name: Generate dbt docs
+        run: dbt docs generate --profiles-dir ./ --project-dir .
+
+      - name: Upload dbt docs artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-docs
+          path: target/
