@@ -1,4 +1,4 @@
-clickstream_sales_project:
+clickstream_sales:
   target: dev
   outputs:
     dev:
