@@ -106,7 +106,7 @@ dbt test --profiles-dir . --project-dir .
 
 ---
 
-## 🤖 CI/CD dengan GitHub Actions
+## CI/CD dengan GitHub Actions
 
 File `.github/workflows/dbt-ci.yml` akan:
 
