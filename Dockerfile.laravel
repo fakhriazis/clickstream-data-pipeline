@@ -1,0 +1,20 @@
+FROM php:8.2-apache
+
+# Install extensions
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Enable mod_rewrite
+RUN a2enmod rewrite
+
+# Copy Laravel project
+COPY . /var/www/html
+
+# Set working dir
+WORKDIR /var/www/html
+
+# Set proper permission (optional)
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
+# Override default Apache config
+COPY ./apache/laravel.conf /etc/apache2/sites-available/000-default.conf

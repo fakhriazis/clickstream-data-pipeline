@@ -34,12 +34,19 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  adminer:
-    image: adminer
-    restart: always
+  laravel:
+    build:
+      context: ./clickstream-api
+      dockerfile: ../Dockerfile.laravel
+    container_name: laravel_app
     ports:
-      - "8080:8080"
-
+      - 8010:80
+    volumes:
+      - ./clickstream-api:/var/www/html
+    depends_on:
+      - kafka
+      - postgres
+    
   minio:
     image: minio/minio
     command: server /data --console-address ":9001"
